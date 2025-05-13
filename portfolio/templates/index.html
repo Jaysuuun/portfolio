@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Jason's | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 text-gray-800 scroll-smooth">
+
+  <!-- Navigation -->
+  <nav id="navbar" class = "bg-white shadow fixed top-0 w-full z-10 transition-transform duration-300">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between">
+      <h1 class="text-xl font-bold">Bob Jason W. Legaspi</h1>
+      <div class="space-x-4">
+     
+        <a href="#skills" class="hover:text-blue-500">Skills</a>
+        <a href="#projects" class="hover:text-blue-500">Projects</a>
+        <a href="#experience" class="hover:text-blue-500">Experience</a>
+        <a href="#contact" class="hover:text-blue-500">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="pt-20 space-y-32">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-blue-100" id="hero">
+  <div class="text-center space-y-4">
+    <img 
+      src="{{ url_for('static', filename='images/pika.png') }}"
+      alt="Profile Picture" 
+      class="mx-auto w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg"
+    />
+    <h2 class="text-4xl font-bold">Hi, I'm Your Name</h2>
+    <p class="text-lg">A junior developer passionate about building and learning.</p>
+  </div>
+</section>
+
+    <!-- About Section -->
+    
+<section id="skills" class="max-w-4xl mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold mb-4">Skills</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Technical Skills Column -->
+    <div>
+      <h3 class="text-xl font-semibold mb-2">Technical Skills</h3>
+      <div class="grid grid-cols-3 sm:grid-cols-4 gap-6">
+        <!-- Skill Item Example -->
+        <div class="relative group">
+          <img src="/static/images/html-5.png" alt="HTML" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            HTML
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/css-3.png" alt="CSS" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            CSS
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/js.png" alt="JavaScript" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            JavaScript
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/python.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            Python
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/docker.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            Docker
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/mysql.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            MySQL
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/php.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            PHP
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/postgre.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            Postgres
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/aws.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            AWS
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/git.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            Git
+          </div>
+        </div>
+
+        <div class="relative group">
+          <img src="/static/images/c-.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            C++
+          </div>
+        </div>
+        
+        <div class="relative group">
+          <img src="/static/images/bash.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+            Bash
+          </div>
+        </div>
+        <!-- Add more logos as necessary -->
+      </div>
+    </div>
+
+    <!-- Soft Skills Column -->
+    <div>
+      <h3 class="text-xl font-semibold mb-2">Soft Skills</h3>
+      <ul class="list-disc pl-5">
+        <li>Communication</li>
+        <li>Problem-Solving</li>
+        <li>Time Management</li>
+        <li>Teamwork</li>
+        <li>Adaptability</li>
+        <li>Leadership</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-8 text-gray-800 dark:text-white">Projects</h2>
+    
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      
+      <!-- Card -->
+      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://via.placeholder.com/150" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Title</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sapien lacinia, sagittis sapien eget, dignissim lorem. Curabitur tincidunt placerat sem at lobortis.</p>
+        </div>
+      </a>
+
+      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://via.placeholder.com/150" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Title</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sapien lacinia, sagittis sapien eget, dignissim lorem. Curabitur tincidunt placerat sem at lobortis.</p>
+        </div>
+      </a>
+
+      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://via.placeholder.com/150" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Title</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sapien lacinia, sagittis sapien eget, dignissim lorem. Curabitur tincidunt placerat sem at lobortis.</p>
+        </div>
+      </a>
+
+      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://via.placeholder.com/150" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Title</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sapien lacinia, sagittis sapien eget, dignissim lorem. Curabitur tincidunt placerat sem at lobortis.</p>
+        </div>
+      </a>
+
+      <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://via.placeholder.com/150" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Title</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sapien lacinia, sagittis sapien eget, dignissim lorem. Curabitur tincidunt placerat sem at lobortis.</p>
+        </div>
+      </a>
+
+      <!-- Repeat 3 more cards... -->
+
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="max-w-4xl mx-auto px-4" id="about">
+      <h2 class="text-3xl font-bold mb-4">Experience</h2>
+      <p>
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+      </p>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-4 mb-12" id="contact">
+      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+      <form action="https://formsubmit.co/YOUR@EMAIL.COM" method="POST" class="bg-white p-6 rounded shadow space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded">
+        <textarea name="message" placeholder="Your Message" required class="w-full p-2 border rounded"></textarea>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      // scrolling down
+      navbar.classList.add('-translate-y-full');
+    } else {
+      // scrolling up
+      navbar.classList.remove('-translate-y-full');
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
+
+</body>
+</html>
