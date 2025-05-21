@@ -7,12 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bob Jason's | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}"> -->
+<style>
+  .circular--portrait {
+    position: relative;
+    width: 300px; /* Default size */
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  @media (min-width: 768px) {
+    .circular--portrait {
+      width: 350px; /* Larger size on medium screens */
+      height: 350px;
+    }
+  }
+  
+  .circular--portrait img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Hover effect styles */
+  .image-hover-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-hover-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .image-hover-container .hover-image {
+    opacity: 0;
+  }
+  
+  .image-hover-container:hover .main-image {
+    opacity: 0;
+  }
+  
+  .image-hover-container:hover .hover-image {
+    opacity: 1;
+  }
+</style>
+
 
 </head>
 
 <body class="bg-gray-100 text-gray-800 scroll-smooth">
 
-  <!-- Navigation -->
+
   <nav id="navbar" class="bg-white shadow fixed top-0 w-full z-10 transition-transform duration-300">
   <div class="px-4 py-3 flex justify-between">
     <h1 class="text-xl font-bold">Bob Jason W. Legaspi</h1>
@@ -26,14 +79,14 @@
 </nav>
 
 
-  <!-- Main content -->
+
   <main class="pt-20 space-y-28">
 
-    <!-- Hero Section -->
+
 <section class="py-20 bg-blue-100" id="hero">
   <div class="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-10">
     
-    <!-- Text -->
+
     <div class="md:w-1/2 text-center md:text-left space-y-4">
       <h2 class="text-5xl font-bold">Hi, you can call me Jaysun</h2>
       <p class="text-lg text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis dui in ornare sollicitudin. 
@@ -44,14 +97,16 @@
         euismod ac justo. Phasellus luctus molestie tristique. </p>
     </div>
     
-    <!-- Image -->
-    <div class="md:w-1/2 flex justify-center md:justify-end">
-      <img 
-        src="{{ url_for('static', filename='images/pika.png') }}"
-        alt="Profile Picture" 
-        class="w-72 h-72 rounded-full object-cover border-4 border-white shadow-lg"
-      />
+  <div class="md:w-1/2 flex justify-center md:justify-end">
+    <div class="circular--portrait">
+      <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/bob.jpg') }}" alt="Profile Picture" class="main-image" />
+        <img src="{{ url_for('static', filename='images/bob0.jpg') }}" alt="Hover Profile Picture" class="hover-image" />
+      </div>
     </div>
+  </div
+
+
 
   </div>
 </section>
@@ -65,10 +120,10 @@
 <section id="skills" class="max-w-7xl mx-auto py-0">
 
   <h2 class="text-5xl font-bold text-center mb-12 mt-0">Skills</h2>
-    <!-- Technical Skills Column -->
+
     <div>
-      <div class="grid grid-cols-3 sm:grid-cols-4 gap-8">
-        <!-- Skill Item Example -->
+      <div class="grid grid-cols-3 sm:grid-cols-8 gap-8">
+
         <div class="relative group">
           <img src="/static/images/html-5.png" alt="HTML" class="w-24 h-24 object-contain mx-auto rounded-md">
           <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
@@ -219,7 +274,6 @@
         </div>
       </a>
 
-      <!-- Repeat 3 more cards... -->
 
     </div>
   </div>
@@ -264,10 +318,10 @@ The standard chunk of Loredasdasdasdam Ipsum used since the 1500s is reproduced 
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > lastScrollY) {
-      // scrolling down
+
       navbar.classList.add('-translate-y-full');
     } else {
-      // scrolling up
+
       navbar.classList.remove('-translate-y-full');
     }
     lastScrollY = window.scrollY;
