@@ -22,8 +22,8 @@
   
   @media (min-width: 768px) {
     .circular--portrait {
-      width: 350px; /* Larger size on medium screens */
-      height: 350px;
+      width: 300px; /* Larger size on medium screens */
+      height: 300px;
     }
   }
   
@@ -60,14 +60,50 @@
     opacity: 1;
   }
 
+     /* Flip card animations */
+  .flip-card {
+      perspective: 1000px;
+      height: 300px;
+  }
+  
+  .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .flip-card-back {
+      transform: rotateY(180deg);
+  }
+        
+     
+  
   .multiline-truncate {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
   }
 
+  
 </style>
 
 
@@ -93,7 +129,7 @@
   <main class="pt-14 space-y-28">
 
 
-<section class="py-20 bg-blue-100 mt-0" id="hero">
+<section class="py-20 bg-blue-50 mt-0" id="hero">
 <div class="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-10">
     
   <div class="md:w-1/2 text-center md:text-left space-y-4">
@@ -102,10 +138,10 @@
       Computer Science Graduate | Aspiring Backend Developer, DevOps & Network Engineer
     </p>
     <p class="text-lg text-gray-700 font-semibold">
-      Hi, you can call me Jason. I am passionate about backend development, especially application deployment, network setup, and troubleshooting.
+      Hi, you can call me Jason. 
     </p>
     <p class="text-lg text-gray-700 font-semibold">
-      I am currently seeking opportunities to apply and grow my skills. I am also working on several <a href="#projects" class="text-blue-600 hover:underline"><em> projects </em></a> that showcase my abilities in software development and networking. I believe in taking decisive action and learning by doing because hesitation only slows progress. This mindset drives me to tackle challenges head-on and continuously improve my skills.
+      I believe in taking decisive action and learning by doing because hesitation only slows progress. This mindset drives me to tackle challenges head-on and continuously improve my skills.
     </p>
   </div>
 
@@ -122,94 +158,88 @@
 
 
 </div>
-</section>
-
-
-</section>
-
-
 
     
-<section id="skills" class="max-w-7xl mx-auto py-0">
+<section id="skills" class="max-w-7xl mx-auto py-10">
 
-  <h2 class="text-5xl font-bold text-center mb-12 mt-0">Skills</h2>
+  <h2 class="text-5xl text-center mb-12 mt-12">Skills</h2>
 
     <div>
-      <div class="grid grid-cols-3 sm:grid-cols-8 gap-8">
+      <div class="grid grid-cols-3 sm:grid-cols-12 gap-8">
 
         <div class="relative group">
           <img src="/static/images/html-5.png" alt="HTML" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             HTML
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/css-3.png" alt="CSS" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             CSS
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/js.png" alt="JavaScript" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             JavaScript
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/python.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             Python
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/docker.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             Docker
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/mysql.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0 bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             MySQL
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/go.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             Golang
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/postgre.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             Postgres
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/aws.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             AWS
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/git.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             Git
           </div>
         </div>
 
         <div class="relative group">
           <img src="/static/images/c-.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
+          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
             C/C++
           </div>
         </div>
@@ -240,91 +270,139 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-8">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-5xl font-bold text-center mb-8 text-gray-800 dark:text-white">Projects</h2>
-    
-    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      
-      <!-- Card -->
-     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/ferin.png" alt="Project Image" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white multiline-truncate">Super loooooooong ttile yayayayayayayya yoyoyoyyo</h5>
-          <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 multiline-truncate">
-            Brief description of the project, what it does, and what technologies you used.sdadsssssssssssssssssssssssssssssssssssssssssssasdasdasdasdasd
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
+
+ <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl text-center mb-12 text-gray-800 dark:text-white">Projects</h2>
+            
+            <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                
+                <!-- NAS setup using Nextcloud -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side -->
+                        <div class="flip-card-front bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-t-lg flex items-center justify-center">
+                                <span class="text-white text-6xl">🗄️</span>
+                            </div>
+                            <div class="p-5 flex flex-col justify-between flex-1">
+                                <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">NAS setup using Nextcloud</h5>
+                                
+                            </div>
+                        </div>
+                        <!-- Back side -->
+                        <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
+                            <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">NAS setup using Nextcloud</h5>
+                            <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
+                                A complete Network Attached Storage solution built with Nextcloud, providing secure file storage, sharing, and collaboration features. Includes automated backups, user management, and mobile app synchronization.
+                            </p>
+                            <a href="https://github.com/Jaysuuun/NAS-using-Nexcloud" class="text-blue-600 hover:underline font-medium">Documentation on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Random Name Generator API -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side -->
+                        <div class="flip-card-front bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 rounded-t-lg flex items-center justify-center">
+                                <span class="text-white text-6xl">🎲</span>
+                            </div>
+                            <div class="p-5 flex flex-col justify-between flex-1">
+                                <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Random Fantasy Name Generator API</h5>
+                               
+                            </div>
+                        </div>
+                        <!-- Back side -->
+                        <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
+                            <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Random Name Generator API</h5>
+                            <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
+                                RESTful API that generates random names for various use cases including testing, gaming, and creative projects. Supports different cultures, genders, and naming patterns with customizable parameters.
+                            </p>
+                            <a href="https://github.com/Jaysuuun/fantasy-name-api" class="text-blue-600 hover:underline font-medium">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Stats tracker and logger -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side -->
+                        <div class="flip-card-front bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="h-48 bg-gradient-to-br from-red-500 to-pink-600 rounded-t-lg flex items-center justify-center">
+                                <span class="text-white text-6xl">📊</span>
+                            </div>
+                            <div class="p-5 flex flex-col justify-between flex-1">
+                                <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Performance Statistics Tracker</h5>
+                            </div>
+                        </div>
+                        <!-- Back side -->
+                        <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
+                            <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Performance Stats Tracker</h5>
+                            <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
+                                Real-time system performance monitoring tool that tracks CPU, memory, disk usage, and network statistics. Features historical data logging, alerting system, and interactive dashboards.
+                            </p>
+                            <a href="https://github.com/Jaysuuun/Server-Performance-Stats-using-GO" class="text-blue-600 hover:underline font-medium">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Information System -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side -->
+                        <div class="flip-card-front bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-t-lg flex items-center justify-center">
+                                <span class="text-white text-6xl">🏫</span>
+                            </div>
+                            <div class="p-5 flex flex-col justify-between flex-1">
+                                <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Student Information System</h5>
+                                
+                            </div>
+                        </div>
+                        <!-- Back side -->
+                        <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
+                            <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Student Information System</h5>
+                            <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
+                                Comprehensive student management platform with enrollment tracking, grade management, attendance monitoring, and parent portal integration. Built with modern web technologies and secure authentication.
+                            </p>
+                            <a href="https://github.com/Jaysuuun/Student-Information-System-Web-App" class="text-blue-600 hover:underline font-medium">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal VPN setup -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side -->
+                        <div class="flip-card-front bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-t-lg flex items-center justify-center">
+                                <span class="text-white text-6xl">🔐</span>
+                            </div>
+                            <div class="p-5 flex flex-col justify-between flex-1">
+                                <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Personal VPN Setup</h5>
+                                
+                            </div>
+                        </div>
+                        <!-- Back side -->
+                        <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
+                            <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Personal VPN Setup</h5>
+                            <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
+                                Self-hosted VPN solution using WireGuard for secure remote access to home network. Includes automated certificate management, client configuration generation, and traffic monitoring dashboard.
+                            </p>
+                            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline font-medium">Documentation on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
 
 
-
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/ferin.png" alt="Project Image" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white multiline-truncate">Super loooooooong ttile yayayayayayayya yoyoyoyyo</h5>
-          <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 multiline-truncate">
-            Brief description of the project, what it does, and what technologies you used.sdadsssssssssssssssssssssssssssssssssssssssssssasdasdasdasdasd
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/ferin.png" alt="Project Image" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white multiline-truncate">Super loooooooong ttile yayayayayayayya yoyoyoyyo</h5>
-          <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 multiline-truncate">
-            Brief description of the project, what it does, and what technologies you used.sdadsssssssssssssssssssssssssssssssssssssssssssasdasdasdasdasd
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/ferin.png" alt="Project Image" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white multiline-truncate">Super loooooooong ttile yayayayayayayya yoyoyoyyo</h5>
-          <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 multiline-truncate">
-            Brief description of the project, what it does, and what technologies you used.sdadsssssssssssssssssssssssssssssssssssssssssssasdasdasdasdasd
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-
-     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/ferin.png" alt="Project Image" />
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white multiline-truncate">Super loooooooong ttile yayayayayayayya yoyoyoyyo</h5>
-          <p class="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 multiline-truncate">
-            Brief description of the project, what it does, and what technologies you used.sdadsssssssssssssssssssssssssssssssssssssssssssasdasdasdasdasd
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://github.com/yourrepo" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="max-w-5xl mx-auto px-4">
-  <h2 class="text-5xl font-bold text-center mb-12">Experience</h2>
+<section id="experience" class="max-w-5xl mx-auto px-4 py-10">
+  <h2 class="text-5xl text-center mb-12">Experience</h2>
 
 <div class="max-w-4xl mx-auto px-4 mt-4">
     <button
@@ -432,31 +510,6 @@
 </div>
 </section>
 
-
-    <!-- Contact Section -->
- <section id="contact" class="max-w-4xl mx-auto px-4 mb-12">
-  <h2 class="text-5xl font-bold mb-6 text-center">Contact Me</h2>
-  <div class="flex justify-center space-x-8 text-lg">
-    <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline flex items-center mb-16 space-x-2">
-      <span>📧</span>
-      <span>bobjasn01@gmail.com</span>
-    </a>
-    <a href="https://www.linkedin.com/in/bob-jason-legaspi-07b37a29a/ target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center mb-16 space-x-2">
-      <span>🔗</span>
-      <span>LinkedIn</span>
-    </a>
-    <a href="https://github.com/Jaysuuun" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center space-x-2 mb-16">
-      <span>💻</span>
-      <span>GitHub</span>
-    </a>
-
-    <a href="tel:+1234567890" class="text-blue-600 hover:underline flex items-center mb-16 space-x-2">
-      <span>📞</span>
-      <span>09538962513</span>
-    </a>
-
-  </div>
-</section>
 
 
 
