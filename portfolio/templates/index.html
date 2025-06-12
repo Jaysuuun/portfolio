@@ -8,7 +8,10 @@
     <title>Bob Jason's | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+     <link href="/style/output.css" rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}"> -->
+
 <style>
   .circular--portrait {
     position: relative;
@@ -103,13 +106,13 @@
       overflow: hidden;
   }
 
-  
+ 
 </style>
 
 
 </head>
 
-<body class="bg-gray-100 text-gray-800 scroll-smooth">
+<body class="bg-black-100 text-gray-800 scroll-smooth">
 
 
   <nav id="navbar" class="bg-white shadow fixed top-0 w-full z-10 transition-transform duration-300">
@@ -129,18 +132,18 @@
   <main class="pt-14 space-y-28">
 
 
-<section class="py-20 bg-blue-50 mt-0" id="hero">
+<section class="py-20 mt-0 bg-gray-50 dark:bg-gray-900 " id="hero">
 <div class="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-10">
     
   <div class="md:w-1/2 text-center md:text-left space-y-4">
-    <h2 class="text-5xl font-bold italic font-semibold">“Hesitation is Defeat”</h2>
-    <p class="text-lg font-bold italic">
+    <h2 class="text-5xl font-bold text-gray-800 dark:text-white italic font-semibold">“Hesitation is Defeat”</h2>
+    <p class="text-lg text-gray-800 dark:text-white font-bold italic">
       Computer Science Graduate | Aspiring Backend Developer, DevOps & Network Engineer
     </p>
-    <p class="text-lg text-gray-700 font-semibold">
+    <p class="text-lg text-gray-700 dark:text-white font-semibold">
       Hi, you can call me Jason. 
     </p>
-    <p class="text-lg text-gray-700 font-semibold">
+    <p class="text-lg text-gray-700 dark:text-white font-semibold">
       I believe in taking decisive action and learning by doing because hesitation only slows progress. This mindset drives me to tackle challenges head-on and continuously improve my skills.
     </p>
   </div>
@@ -160,97 +163,24 @@
 </div>
 
     
-<section id="skills" class="max-w-7xl mx-auto py-10">
+<section id="skills" class="bg-gray-50 dark:bg-gray-900 py-10">
 
-  <h2 class="text-5xl text-center mb-12 mt-12">Skills</h2>
+  <h2 class="text-5xl text-center text-gray-800 dark:text-white mb-12 mt-12">Skills</h2>
 
-    <div>
-      <div class="grid grid-cols-3 sm:grid-cols-12 gap-8">
-
-        <div class="relative group">
-          <img src="/static/images/html-5.png" alt="HTML" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            HTML
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/css-3.png" alt="CSS" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            CSS
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/js.png" alt="JavaScript" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            JavaScript
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/python.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Python
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/docker.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Docker
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/mysql.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            MySQL
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/go.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Golang
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/postgre.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Postgres
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/aws.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            AWS
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/git.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Git
-          </div>
-        </div>
-
-        <div class="relative group">
-          <img src="/static/images/c-.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0  bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            C/C++
-          </div>
-        </div>
-        
-        <div class="relative group">
-          <img src="/static/images/bash.png" alt="Python" class="w-24 h-24 object-contain mx-auto rounded-md">
-          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold">
-            Bash
-          </div>
-        </div>
-        <!-- Add more logos as necessary -->
+      <div class="logos">
+      <div class="logos-slide">
+        <img src="/static/images/html-5.png" alt="HTML" />
+        <img src="/static/images/css-3.png" alt="CSS" />
+        <img src="/static/images/js.png" alt="JavaScript" />
+        <img src="/static/images/python.png" alt="Python" />
+        <img src="/static/images/docker.png" alt="Docker" />
+        <img src="/static/images/mysql.png" alt="MySQL" />
+        <img src="/static/images/go.png" alt="Golang" />
+        <img src="/static/images/postgre.png" alt="Postgres" />
+        <img src="/static/images/aws.png" alt="AWS" />
+        <img src="/static/images/git.png" alt="Git" />
+        <img src="/static/images/c-.png" alt="C/C++" />
+        <img src="/static/images/bash.png" alt="Bash" />
       </div>
     </div>
 
@@ -265,13 +195,14 @@
       <span class="bg-yellow-500 px-4 py-2 rounded-full shadow">Leadership</span>
     </div>
   </div>
+
  
 </section>
 
 
     <!-- Projects Section -->
 
- <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-10 mt-16">
+ <section id="projects" class="bg-gray-50 dark:bg-gray-900 py-10 mt-0">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-5xl text-center mb-12 text-gray-800 dark:text-white">Projects</h2>
             
@@ -401,8 +332,8 @@
     </section>
 
 
-<section id="experience" class="max-w-5xl mx-auto px-4 py-10">
-  <h2 class="text-5xl text-center mb-12">Experience</h2>
+<section id="experience" class="bg-gray-50 dark:bg-gray-900 px-4 py-10">
+  <h2 class="text-5xl text-center mb-12 text-gray-800 dark:text-white">Experience</h2>
 
 <div class="max-w-4xl mx-auto px-4 mt-4">
     <button
@@ -414,7 +345,7 @@
 
   <!-- Collapsible content -->
   <div id="experience-content" class="mt-4 hidden">
-    <ul class="list-disc pl-6 space-y-3 text-lg text-justify">
+    <ul class="list-disc pl-6 space-y-3 text-lg text-gray-800 dark:text-white text-justify">
       <li>
         Interned at Pixzel Digital, working as a <strong>full-stack developer</strong> on e-commerce applications including inventory and restaurant management systems.
       </li>
@@ -450,7 +381,7 @@
 
   <!-- Collapsible content -->
   <div id="thesis-experience2" class="mt-4 hidden">
-  <ul class="list-disc pl-6 space-y-3 text-lg text-justify">
+  <ul class="list-disc pl-6 space-y-3 text-lg text-gray-800 dark:text-white text-justify">
     <li>
       Developed a gamification system for an existing LMS as part of the thesis project: <em>"Loyalty: Will the Integration of Gamification Promote Learning Interactions in my.Eskwela"</em>.
     </li>
@@ -483,7 +414,7 @@
 
   <!-- Collapsible content -->
   <div id="experience-content3" class="mt-4 hidden">
-    <ul class="list-disc pl-6 space-y-3 text-lg text-justify">
+    <ul class="list-disc pl-6 space-y-3 text-lg text-gray-800 dark:text-white text-justify">
       <li>
         Set up a personal <strong> NAS (Network Attached Storage)</strong> using <strong> Nextcloud </strong> to explore self-hosting and file-sharing services.
       </li>
@@ -514,6 +445,8 @@
 
 
   </main>
+
+    
 
   <script>
   let lastScrollY = window.scrollY;
