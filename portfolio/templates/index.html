@@ -203,6 +203,72 @@
 
     padding-bottom: 60px;
   }
+
+  body {
+  margin: 0;
+  padding: 0;
+}
+
+.toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 10px;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 1000;
+    }
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+.tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -75px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
 </style>
 
 
@@ -212,14 +278,35 @@
 
 
   <nav id="navbar" class="bg-gray-50 dark:bg-gray-900 shadow fixed top-0 w-full z-10 transition-transform duration-300">
-  <div class="px-4 py-3 flex justify-between">
-    <h1 class="text-xl font-bold text-gray-800 dark:text-white italic"><a href="#" class="hover:text-blue-500"> Bob Jason W. Legaspi</a></h1>
-    <div class="space-x-4 text-gray-800 dark:text-white">
+  <div class="px-4 py-3 flex justify-between items-center">
+    <!-- Logo / Name -->
+    <h1 class="text-xl font-bold text-gray-800 dark:text-white italic">
+      <a href="#" class="hover:text-blue-500">Bob Jason W. Legaspi</a>
+    </h1>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-4 text-gray-800 dark:text-white">
       <a href="#skills" class="hover:text-blue-500">Skills</a>
       <a href="#projects" class="hover:text-blue-500">Projects</a>
       <a href="#experience" class="hover:text-blue-500">Experience</a>
-      <a href="#contact" class="hover:text-blue-500">Contact</a>
     </div>
+
+    <!-- Hamburger Icon -->
+    <button class="md:hidden text-gray-800 dark:text-white focus:outline-none" onclick="toggleMenu()">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16">
+        </path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden px-4 pb-3 space-y-2 text-gray-800 dark:text-white hidden">
+    <a href="#skills" class="block hover:text-blue-500">Skills</a>
+    <a href="#projects" class="block hover:text-blue-500">Projects</a>
+    <a href="#experience" class="block hover:text-blue-500">Experience</a>
   </div>
 </nav>
 
@@ -268,9 +355,14 @@
   </a>
 
   <!-- Phone Button -->
-  <button onclick="copyPhoneNumber()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow">
-    📱 09538962513
-  </button>
+   <div class="tooltip">
+    <button onclick="copyPhoneNumber()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow">
+      📱 09538962513
+    </button>
+    <span class="tooltiptext">Click to copy</span>
+    <div id="toast" class="toast">Copied to clipboard!</div>
+  </div>
+
 </div>
 
   </div>
@@ -484,7 +576,7 @@
                         <div class="flip-card-back bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 justify-center p-6">
                             <h5 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Personal VPN Setup</h5>
                             <p class="text-sm text-gray-700 dark:text-gray-400 mb-6 flex-1">
-                                Self-hosted VPN solution using WireGuard for secure remote access to home network. Includes automated certificate management, client configuration generation, and traffic monitoring dashboard.
+                                Self-hosted VPN solution using Openvpn for secure remote access to home network. Includes automated certificate management, client configuration generation, and traffic monitoring dashboard.
                             </p>
                             <a href="https://github.com/Jaysuuun" class="text-blue-600 hover:underline font-medium">Documentation on GitHub →</a>
                         </div>
@@ -614,12 +706,63 @@
 
   <script>
 
-  function copyPhoneNumber() {
-    const number = "09538962513"; // Replace with your real number
-    navigator.clipboard.writeText(number).then(() => {
-      alert("Phone number copied to clipboard!");
-    });
+   function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
   }
+
+ function copyPhoneNumber() {
+      const number = "09538962513";
+      // Try clipboard API or fallback
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(number)
+          .then(() => showToast())
+          .catch(() => fallbackCopyText(number));
+      } else {
+        fallbackCopyText(number);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.top = 0;
+      textarea.style.left = 0;
+      textarea.style.width = "1px";
+      textarea.style.height = "1px";
+      textarea.style.padding = 0;
+      textarea.style.border = "none";
+      textarea.style.outline = "none";
+      textarea.style.boxShadow = "none";
+      textarea.style.background = "transparent";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      try {
+        const successful = document.execCommand("copy");
+        if (successful) {
+          showToast();
+        } else {
+          alert("Failed to copy. Please copy manually.");
+        }
+      } catch (err) {
+        alert("Oops, unable to copy");
+      }
+
+      document.body.removeChild(textarea);
+    }
+
+    function showToast() {
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000); // Toast visible for 2 seconds
+    }
+
+
 
   let lastScrollY = window.scrollY;
   const navbar = document.getElementById('navbar');
